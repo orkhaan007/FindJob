@@ -157,7 +157,7 @@ namespace ExtraFunc
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential("orkhanm07@gmail.com", "viotnlxyqgkodtkw"),
+                    Credentials = new NetworkCredential("", ""),
                     EnableSsl = true,
                 };
                 MailMessage message = new MailMessage();
