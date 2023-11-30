@@ -56,6 +56,33 @@ Explore the world of job opportunities with our C#-based application. Discover, 
             }
         }
      ```
+     Example `ExtraFuncs.cs`:
+     ```csharp
+     public static string HelpAndSupprt(string userEmail)
+        {
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("YOUR_EMAIL", "YOUR_PASSWORD"),
+                    EnableSsl = true,
+                };
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress("FindJobRegistration@findjob.com");
+                message.Subject = "Help&Support";
+                message.To.Add(new MailAddress(userEmail));
+                message.Body = $"Thank you for your interest. There is no service available at the moment, but your message will be answered as soon as possible.";
+                smtpClient.Send(message);
+                return "Success!";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending verification email: {ex.Message}");
+                return null;
+            }
+        }
+     ```
 4. Build and run the application in Visual Studio.
 
 ## Contributing
