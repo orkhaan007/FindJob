@@ -1,4 +1,4 @@
-# FindJob Explorer Project
+[# FindJob Explorer Project
 
 Welcome to the FindJob Explorer Project!
 
@@ -25,25 +25,38 @@ Explore the world of job opportunities with our C#-based application. Discover, 
 1. Clone the repository: `git clone https://github.com/YourUsername/FindJob-Explorer.git`
 2. Open the project in Visual Studio.
 3. Update App Settings:
-   - Navigate to the `appsettings.json` file in the project's `Function` folder.
+   - Navigate to the `ExtraFuncs.cs` file in the project's `Functions` folder.
    - Modify the values in the section according to your SMTP configuration.
 
-     Example `appsettings.json`:
-     ```json
-     {
-       "SmtpServer": "your.smtp.server.com",
-       "SmtpPort": 587,
-       "SmtpUsername": "your.email@gmail.com",
-       "SmtpPassword": "yourSmtpPassword",
-       "SenderEmail": "your.sender@gmail.com",
-       "RecipientEmail": "your.recipient@gmail.com"
-     }
+     Example `ExtraFuncs.cs`:
+     ```csharp
+     public static string SendVerificationCodeByEmail(string userEmail)
+        {
+            string verificationCode = GenerateRandomVerificationCode();
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("", ""),
+                    EnableSsl = true,
+                };
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress("FindJobRegistration@findjob.com");
+                message.Subject = "Verification Code";
+                message.To.Add(new MailAddress(userEmail));
+                message.Body = $"Your verification code is: {verificationCode}";
+                smtpClient.Send(message);
+                return verificationCode;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending verification email: {ex.Message}");
+                return null;
+            }
+        }
      ```
 4. Build and run the application in Visual Studio.
-
-## Extra Functions
-
-Check out additional functionalities in the `Function` folder, specifically the `extrafunc` directory. Explore and leverage these extra functions to enhance your job-seeking experience.
 
 ## Contributing
 
@@ -60,3 +73,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Happy job hunting! 🌐
+](url)
