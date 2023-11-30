@@ -1,4 +1,4 @@
-# FindJob Explorer Project
+# FindJob Project
 
 Welcome to the FindJob Explorer Project!
 
