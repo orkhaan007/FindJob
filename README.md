@@ -91,7 +91,7 @@ We welcome contributions! If you'd like to contribute, please fork the repositor
 
 ## Contact
 
-Have questions or feedback? Feel free to reach out to us via email at [your.email@example.com](mailto:your.email@example.com).
+Have questions or feedback? Feel free to reach out to us via email at [your.email@example.com](mailto:orkhanm07@gmail.com).
 
 ## License
 
