@@ -27,35 +27,7 @@ Explore the world of job opportunities with our C#-based application. Discover, 
 3. Update App Settings:
    - Navigate to the `ExtraFuncs.cs` file in the project's `Functions` folder.
    - Modify the values in the section according to your SMTP configuration.
-
-     Example `ExtraFuncs.cs`:
-     ```csharp
-     public static string SendVerificationCodeByEmail(string userEmail)
-        {
-            string verificationCode = GenerateRandomVerificationCode();
-            try
-            {
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
-                {
-                    Port = 587,
-                    Credentials = new NetworkCredential("", ""),
-                    EnableSsl = true,
-                };
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress("FindJobRegistration@findjob.com");
-                message.Subject = "Verification Code";
-                message.To.Add(new MailAddress(userEmail));
-                message.Body = $"Your verification code is: {verificationCode}";
-                smtpClient.Send(message);
-                return verificationCode;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error sending verification email: {ex.Message}");
-                return null;
-            }
-        }
-     ```
+  
      Example `ExtraFuncs.cs`:
      ```csharp
      public static string HelpAndSupprt(string userEmail)
