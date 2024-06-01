@@ -2,7 +2,7 @@
 
 Welcome to the FindJob Explorer Project!
 
-Explore the world of job opportunities with our C#-based application. Discover, customize, and stay updated on job listings that match your preferences.
+Explore the world of job opportunities with our C#-based console application. Discover, customize, and stay updated on job listings that match your preferences.
 
 ## Features
 
