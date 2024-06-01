@@ -22,7 +22,7 @@ Explore the world of job opportunities with our C#-based application. Discover, 
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/YourUsername/FindJob-Explorer.git`
+1. Clone the repository: `git clone https://github.com/orkhaan007/FindJob.git`
 2. Open the project in Visual Studio.
 3. Update App Settings:
    - Navigate to the `ExtraFuncs.cs` file in the project's `Functions` folder.
